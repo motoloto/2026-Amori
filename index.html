@@ -17,6 +17,11 @@
       --border-color: #edf2f7;
       --tag-bg: #edf2f7;
       --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+      --parking-bg: #f0fff4;
+      --parking-border: #9ae6b4;
+      --parking-text: #22543d;
+      --meal-tag-bg: #feebc8;
+      --meal-tag-text: #7b341e;
     }
 
     * {
@@ -38,7 +43,6 @@
       padding-bottom: 40px;
     }
 
-    /* 置頂導航列 */
     header {
       position: sticky;
       top: 0;
@@ -57,7 +61,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* 橫向滑動日期按鈕 */
     .nav-bar {
       display: flex;
       gap: 8px;
@@ -104,14 +107,12 @@
       color: #ffe8e8;
     }
 
-    /* 主要容器 */
     .container {
       max-width: 600px;
       margin: 0 auto;
       padding: 12px 12px;
     }
 
-    /* 當日行程卡片 */
     .day-card {
       background: var(--card-bg);
       border-radius: 14px;
@@ -145,7 +146,6 @@
       color: #1a202c;
     }
 
-    /* 區塊樣式 */
     .section-block {
       margin-bottom: 14px;
       padding-bottom: 12px;
@@ -168,7 +168,6 @@
       margin-bottom: 8px;
     }
 
-    /* 行程項目列表 */
     .timeline-item {
       display: flex;
       flex-direction: column;
@@ -207,6 +206,27 @@
       text-decoration: underline;
     }
 
+    .parking-box {
+      background: var(--parking-bg);
+      border-left: 3px solid var(--parking-border);
+      padding: 6px 10px;
+      margin: 4px 0 2px 20px;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.8rem;
+      color: var(--parking-text);
+      line-height: 1.4;
+    }
+
+    .parking-box strong {
+      color: #1c4532;
+    }
+
+    .parking-box a {
+      color: #2b6cb0;
+      font-weight: 600;
+      margin-left: 4px;
+    }
+
     .recommend-dish {
       background: var(--primary-light);
       color: #9b2c2c;
@@ -234,11 +254,26 @@
     .hotel-box {
       background: #ebf8ff;
       border: 1px solid #bee3f8;
-      padding: 8px 10px;
+      padding: 10px 12px;
       border-radius: 8px;
       margin-top: 6px;
       font-size: 0.82rem;
       color: #2b6cb0;
+      line-height: 1.5;
+    }
+
+    .hotel-intro {
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed #bee3f8;
+      color: #2c5282;
+      font-size: 0.8rem;
+    }
+
+    .hotel-intro a {
+      color: #2b6cb0;
+      font-weight: 600;
+      text-decoration: underline;
     }
 
     .flight-box {
@@ -248,11 +283,30 @@
       margin-top: 4px;
       border-radius: 0 6px 6px 0;
     }
+
+    .rental-tag {
+      background: var(--meal-tag-bg);
+      color: var(--meal-tag-text);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-left: 4px;
+    }
+
+    .meal-included-tag {
+      background: #c6f6d5;
+      color: #22543d;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-left: 6px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- 置頂快速切換列 -->
   <header>
     <div class="header-title">🍁 青森・八幡平・東京秋季之旅</div>
     <nav class="nav-bar">
@@ -272,11 +326,11 @@
     <article id="day1" class="day-card">
       <div class="day-header">
         <span class="day-badge">Day 1｜11/01 (日)</span>
-        <h2 class="day-title">台北 → 東京 → 青森</h2>
+        <h2 class="day-title">台北 → 東京 → 東北新幹線直奔青森</h2>
       </div>
 
       <div class="section-block">
-        <div class="section-title">✈️ 航班與前往青森</div>
+        <div class="section-title">✈️ 航班與新幹線移動</div>
         <div class="timeline-item">
           <div class="item-header">
             <span class="item-time">04:30</span> 抵達桃園國際機場 T1 報到
@@ -287,14 +341,21 @@
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
           <div class="item-header">
-            <span class="item-time">12:30</span> 成田機場 ➔ 羽田機場轉機 (京成 Access 直通或巴士)
+            <span class="item-time">12:00</span> 成田機場 ➔ 東京車站
           </div>
-          <div class="item-detail">搭乘 16:00 國內線班機 (如 JAL147) 前往青森 (17:10 抵達)</div>
+          <div class="item-detail">搭乘 JR 成田特快 N'EX（約 60 分）直達東京站。</div>
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
           <div class="item-header">
-            <span class="item-time">17:50</span> 青森機場取車，自駕前往青森市區 (約 30 分)
+            <span class="item-time">14:26</span> 搭乘東北新幹線 Hayabusa（東京出發）
           </div>
+          <div class="item-detail">全車指定席，新青森轉乘奧羽本線接駁，於 17:30 抵達青森站。</div>
+        </div>
+        <div class="timeline-item" style="margin-top: 6px;">
+          <div class="item-header">
+            <span class="item-time">17:30</span> 抵達 青森站
+          </div>
+          <div class="item-detail">出站步行約 8–10 分鐘至 Dormy Inn 青森辦理入住與卸放行李。</div>
         </div>
       </div>
 
@@ -308,15 +369,16 @@
       <div class="section-block">
         <div class="section-title">🏛️ 景點行程</div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">18:30</span> 青森市區超市／超商採買補給</div>
-          <div class="item-detail">採買車上零食、飲用水與路程所需補給品。</div>
+          <div class="item-header"><span class="item-time">18:30</span> 青森市區散步與簡易補給</div>
+          <div class="item-detail">飯店安頓後至市區超商或商店街散策，感受津輕深秋夜景。</div>
         </div>
       </div>
 
       <div class="section-block">
         <div class="section-title">🍜 午餐 / 晚餐</div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">12:00</span> 成田機場或移動途中簡餐</div>
+          <div class="item-header"><span class="item-time">13:30</span> 東京車站地下街（駅弁屋 祭）</div>
+          <div class="recommend-dish">🍽️ 推薦：挑選特色鐵路便當於新幹線上享用</div>
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
           <div class="item-header"><span class="item-time">19:30</span> お食事処 おさない (Osanai)</div>
@@ -337,58 +399,97 @@
     <article id="day2" class="day-card">
       <div class="day-header">
         <span class="day-badge">Day 2｜11/02 (一)</span>
-        <h2 class="day-title">八甲田索道・城倉大橋・酸湯溫泉</h2>
+        <h2 class="day-title">取車・在地超市採買・八甲田索道・城倉大橋</h2>
       </div>
 
       <div class="section-block">
         <div class="section-title">☕ 早餐</div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">08:00</span> Dormy Inn 招牌海鮮丼早餐</div>
-          <div class="item-detail">09:00 退房自駕出發往八甲田索道 (約 40 分)。</div>
+          <div class="item-header"><span class="item-time">07:30</span> 起床</div>
+          <div class="item-detail">08:00 Dormy Inn 招牌自選海鮮丼早餐，餐後整理行李辦理退房。</div>
         </div>
       </div>
 
       <div class="section-block">
-        <div class="section-title">🏛️ 景點行程（上午）</div>
+        <div class="section-title">🏛️ 景點行程（上午・取車與超市採買）</div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">09:40</span> 八甲田索道</div>
-          <div class="item-detail">搭乘纜車登頂，捕捉紅葉與初雪共存之壯麗光影，漫步山頂高山步道。</div>
+          <div class="item-header">
+            <span class="item-time">09:00</span> 租車門市辦理取車手續 <span class="rental-tag">09:00 取車</span>
+          </div>
+          <div class="item-detail">步行前往青森車站前租車門市，確認車況、導航設定並裝載行李。</div>
+        </div>
+        <div class="timeline-item" style="margin-top: 6px;">
+          <div class="item-header"><span class="item-time">09:25</span> 自駕前往在地大型超市採買（車程約 12 分鐘）</div>
+        </div>
+        <div class="timeline-item" style="margin-top: 6px;">
+          <div class="item-header"><span class="item-time">09:40</span> 在地大型超市採買物資（Universe 筒井店 或 產直市場）</div>
+          <div class="parking-box">
+            🅿️ <strong>停泊點：</strong>Universe 筒井店 大型免費平面停車場（ユニバース筒井店 駐車場）<a href="https://www.google.com/maps/search/?api=1&query=ユニバース+筒井店+駐車場" target="_blank">導航</a>
+          </div>
+          <div class="item-detail">
+            <strong>採買上山物資（停留約 30 分鐘）：</strong>順路位於前往八甲田山的 103 號公路旁。採買當季新鮮青森蜜蘋果、橘子、運動補給飲料、熱量點心及高山健行零食。
+          </div>
+        </div>
+        <div class="timeline-item" style="margin-top: 6px;">
+          <div class="item-header"><span class="item-time">10:15</span> 自駕出發開往八甲田索道（沿國道 103 號，車程約 35 分鐘）</div>
+        </div>
+        <div class="timeline-item" style="margin-top: 6px;">
+          <div class="item-header"><span class="item-time">10:50</span> 八甲田索道</div>
+          <div class="parking-box">
+            🅿️ <strong>停泊點：</strong>八甲田ロープウェー山麓駅 專用停車場（免費，約350台）<a href="https://www.google.com/maps/search/?api=1&query=八甲田ロープウェー+駐車場" target="_blank">導航</a>
+          </div>
+          <div class="item-detail">搭乘纜車登頂，捕捉紅葉與初雪交織之壯麗山景，漫步山頂高山步道。</div>
         </div>
       </div>
 
       <div class="section-block">
         <div class="section-title">🍜 午餐</div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">12:40</span> 八甲田索道山麓站餐廳</div>
-          <div class="recommend-dish">🍽️ 推薦：暖胃熱湯蕎麥麵或拉麵</div>
+          <div class="item-header"><span class="item-time">13:15</span> 八甲田索道山麓站餐廳</div>
+          <div class="recommend-dish">🍽️️ 推薦：暖胃熱湯蕎麥麵或拉麵</div>
         </div>
       </div>
 
       <div class="section-block">
         <div class="section-title">🏛️ 景點行程（下午）</div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">13:40</span> 城倉大橋 (Jōgakura Bridge)</div>
-          <div class="item-detail">自駕約 20 分。日本最長無支柱拱橋，俯瞰滿山谷秋色紅葉。</div>
+          <div class="item-header"><span class="item-time">14:15</span> 自駕前往城倉大橋（車程約 15 分鐘）</div>
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
-          <div class="item-header"><span class="item-time">15:45</span> 抵達酸湯溫泉辦理入住</div>
+          <div class="item-header"><span class="item-time">14:30</span> 城倉大橋 (Jōgakura Bridge)</div>
+          <div class="parking-box">
+            🅿️ <strong>停泊點：</strong>城倉大橋東側 / 西側 觀景專用免費停車場<a href="https://www.google.com/maps/search/?api=1&query=城ヶ倉大橋+駐車場" target="_blank">導航</a>
+          </div>
+          <div class="item-detail">停好車後步行上橋，日本最長無支柱拱橋，俯瞰滿山谷深秋紅葉。</div>
+        </div>
+        <div class="timeline-item" style="margin-top: 6px;">
+          <div class="item-header"><span class="item-time">15:40</span> 自駕前往酸湯溫泉（車程約 15 分鐘）</div>
+        </div>
+        <div class="timeline-item" style="margin-top: 6px;">
+          <div class="item-header"><span class="item-time">15:55</span> 抵達 酸湯溫泉 辦理入住</div>
+          <div class="parking-box">
+            🅿️ <strong>停泊點：</strong>酸湯溫泉 房客專用免費停車場（本館前或斜坡停車場）<a href="https://www.google.com/maps/search/?api=1&query=酸ヶ湯温泉+駐車場" target="_blank">導航</a>
+          </div>
         </div>
       </div>
 
       <div class="section-block">
-        <div class="section-title">🍜 晚餐</div>
+        <div class="section-title">🍜 晚餐 <span class="meal-included-tag">館內專案已包含</span></div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">18:00</span> 酸湯溫泉旅館 一泊二食會席料理</div>
-          <div class="recommend-dish">🍽️ 推薦：秋季山菜地雞鍋物料理</div>
+          <div class="item-header"><span class="item-time">18:00</span> 酸湯溫泉旅館 專案會席料理</div>
+          <div class="recommend-dish">🍽️ 推薦：酸湯名物山菜、地雞火鍋與時令秋季會席</div>
         </div>
       </div>
 
       <div class="section-block">
         <div class="section-title">🏨 返回住宿</div>
         <div class="hotel-box">
-          <strong>酸湯溫泉 (Sukayu Onsen)</strong><br>
-          預約編號：X-5TFA0DXEF0Z (1人 ￥28,900 / 兩晚)<br>
-          體驗名聞遐邇的「千人風呂」男女混浴大浴場
+          <strong>酸湯溫泉 (Sukayu Onsen)</strong> <span class="meal-included-tag">一泊二食・含早晚餐</span><br>
+          預約編號：X-5TFA0DXEF0Z (1人 ￥28,900 / 兩晚連住)<br>
+          <div class="hotel-intro">
+            ♨️ <strong>名湯特色：</strong>開湯逾三百年歷史，為日本「國民保養溫泉地第一號」。最著名的是約 160 坪全檜木打造、無樑柱的巨大男女混浴大浴場「千人風呂」（熱之湯、四分之六分之湯、鹿之湯出瀧）；亦設有男女分開的「玉之湯」可安心洗沐。酸性純硫磺泉乳白色澤極具療效。<br>
+            📖 <strong>參考指南：</strong><a href="https://nicklee.tw/2779/aomori-sukayu/" target="_blank">小氣少年・酸湯溫泉全攻略與入浴守則</a>
+          </div>
         </div>
       </div>
     </article>
@@ -401,10 +502,13 @@
       </div>
 
       <div class="section-block">
-        <div class="section-title">☕ 早餐</div>
+        <div class="section-title">☕ 早餐 <span class="meal-included-tag">酸湯溫泉已包含</span></div>
         <div class="timeline-item">
           <div class="item-header"><span class="item-time">05:00</span> 清晨出發整裝</div>
-          <div class="item-detail">05:20 自駕出發前往蔦沼 (約 20 分)，自備輕食或於溪流休息站享用。</div>
+          <div class="item-detail">05:20 自駕出發前往蔦沼（車程約 20 分鐘），隨身攜帶前日超市採買之蘋果點心。</div>
+        </div>
+        <div class="timeline-item" style="margin-top: 4px;">
+          <div class="item-header"><span class="item-time">08:00</span> 返回旅館享用專案早餐（或請館方配合早出準備晨間餐盒）</div>
         </div>
       </div>
 
@@ -412,44 +516,57 @@
         <div class="section-title">🏛️ 景點行程（上午）</div>
         <div class="timeline-item">
           <div class="item-header"><span class="item-time">05:40</span> 蔦沼朝燒 (TSUTANUMA Pond)</div>
-          <div class="item-detail">拍攝清晨朝燒紅葉倒影（需事前確認入場預約管制）。</div>
+          <div class="parking-box">
+            🅿️ <strong>停泊點：</strong>蔦溫泉 / 蔦野鳥之森專用停車場（需持事前預約入場券受檢）<a href="https://www.google.com/maps/search/?api=1&query=蔦野鳥の森+駐車場" target="_blank">導航</a>
+          </div>
+          <div class="item-detail">自停車場步行約 15 分鐘木棧道至蔦沼展望台，拍攝清晨「蔦沼朝燒」紅葉倒影。</div>
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
-          <div class="item-header"><span class="item-time">09:00</span> 奧入瀨溪流精華步道健行</div>
-          <div class="item-detail">自駕約 30 分至石之戶，沿溪畔木棧道拍攝奔流與水石。</div>
+          <div class="item-header"><span class="item-time">09:00</span> 自駕前往奧入瀨溪流（車程約 30 分鐘）</div>
+        </div>
+        <div class="timeline-item" style="margin-top: 6px;">
+          <div class="item-header"><span class="item-time">09:30</span> 奧入瀨溪流精華步道健行（石之戶～雲井之瀧）</div>
+          <div class="parking-box">
+            🅿️ <strong>停泊點：</strong>石之戶休憩所 專用停車場（石ヶ戸休憩所 駐車場，免費）<a href="https://www.google.com/maps/search/?api=1&query=石ヶ戸休憩所+駐車場" target="_blank">導航</a>
+          </div>
+          <div class="item-detail">將車停妥於石之戶，沿溪畔木棧道步行拍攝奔流與水石，可視體力搭乘區間巴士返回停車場取車。</div>
         </div>
       </div>
 
       <div class="section-block">
         <div class="section-title">🍜 午餐</div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">12:30</span> 奧入瀨溪流館或休屋餐廳</div>
+          <div class="item-header"><span class="item-time">12:30</span> 奧入瀨溪流館 或 休屋餐廳</div>
           <div class="recommend-dish">🍽️ 推薦：十和田牛肋排燒（十和田バラ焼き）</div>
         </div>
       </div>
 
       <div class="section-block">
-        <div class="section-title">🏛️️ 景點行程（下午）</div>
+        <div class="section-title">🏛️ 景點行程（下午）</div>
         <div class="timeline-item">
           <div class="item-header"><span class="item-time">13:30</span> 銚子大瀑布 (Choshi Falls)</div>
-          <div class="item-detail">近距離拍攝奧入瀨溪流最壯觀之瀑布流水。</div>
+          <div class="parking-box">
+            🅿️ <strong>停泊點：</strong>銚子大瀧專用停車站點（銚子大滝 駐車場，免費，約10台）<a href="https://www.google.com/maps/search/?api=1&query=銚子大滝+駐車場" target="_blank">導航</a>
+          </div>
+          <div class="item-detail">自石之戶開車上行約 10 分鐘，近距離拍攝奧入瀨溪流最壯觀之瀑布流水。</div>
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
-          <div class="item-header"><span class="item-time">15:30</span> 自駕返程酸湯溫泉 (約 45 分)</div>
+          <div class="item-header"><span class="item-time">15:15</span> 自駕返回酸湯溫泉（車程約 45 分鐘）</div>
         </div>
       </div>
 
       <div class="section-block">
-        <div class="section-title">🍜 晚餐</div>
+        <div class="section-title">🍜 晚餐 <span class="meal-included-tag">館內專案已包含</span></div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">18:00</span> 酸湯溫泉旅館 第二晚特色晚餐</div>
+          <div class="item-header"><span class="item-time">18:00</span> 酸湯溫泉旅館 第二晚特色會席晚餐</div>
+          <div class="recommend-dish">🍽️ 推薦：旅館連住更換菜單之時令鄉土珍味</div>
         </div>
       </div>
 
       <div class="section-block">
         <div class="section-title">🏨 返回住宿</div>
         <div class="hotel-box">
-          <strong>酸湯溫泉 (Sukayu Onsen)</strong>（續住第二晚）<br>
+          <strong>酸湯溫泉 (Sukayu Onsen)</strong> <span class="meal-included-tag">一泊二食・含早晚餐</span>（續住第二晚）<br>
           享受酸性硫磺泉，舒緩連續兩日健行肌肉
         </div>
       </div>
@@ -463,22 +580,25 @@
       </div>
 
       <div class="section-block">
-        <div class="section-title">☕ 早餐</div>
+        <div class="section-title">☕ 早餐 <span class="meal-included-tag">酸湯溫泉已包含</span></div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">08:00</span> 酸湯溫泉旅館早餐</div>
-          <div class="item-detail">08:45 退房南下走國道 282 號前往八幡平 (約 1 小時 45 分)。</div>
+          <div class="item-header"><span class="item-time">08:00</span> 酸湯溫泉旅館 日式定食早餐</div>
+          <div class="item-detail">08:45 退房南下走國道 282 號前往八幡平 Aspite Line（車程約 1 小時 45 分）。</div>
         </div>
       </div>
 
       <div class="section-block">
-        <div class="section-title">🏛️ 景點行程（上午）</div>
+        <div class="section-title">🏛️️ 景點行程（上午）</div>
         <div class="timeline-item">
           <div class="item-header"><span class="item-time">10:30</span> 八幡平盾形火山線 (Aspite Line)</div>
-          <div class="item-detail">頂級景觀公路兜風行駛約 30 分至標高 1,613 公尺的山頂。</div>
+          <div class="item-detail">進入景觀公路，行駛約 30 分鐘登上海拔 1,613 公尺的山頂鞍部。</div>
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
           <div class="item-header"><span class="item-time">11:00</span> 八幡平頂上健行步道</div>
-          <div class="item-detail">沿木棧道健行約 60–80 分，走訪山頂一等三角點、八幡沼與鏡沼。</div>
+          <div class="parking-box">
+            🅿️ <strong>停泊點：</strong>八幡平山頂見返峠 駐車場（八幡平山頂レストハウス，收費約500円）<a href="https://www.google.com/maps/search/?api=1&query=八幡平山頂レストハウス+駐車場" target="_blank">導航</a>
+          </div>
+          <div class="item-detail">停好車後沿步道入口木棧道健行約 60–80 分，走訪一等三角點、八幡沼與鏡沼。</div>
         </div>
       </div>
 
@@ -493,26 +613,38 @@
       <div class="section-block">
         <div class="section-title">🏛️ 景點行程（下午）</div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">13:30</span> 後生掛自然研究路</div>
-          <div class="item-detail">下車散策約 30–40 分，近距離感受滾燙冒泡的泥火山地質奇景。</div>
+          <div class="item-header"><span class="item-time">13:15</span> 自駕前往後生掛自然研究路（車程約 15 分鐘）</div>
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
-          <div class="item-header"><span class="item-time">14:15</span> 自駕北返十和田湖西岸 (約 1 小時 30 分)</div>
+          <div class="item-header"><span class="item-time">13:30</span> 後生掛自然研究路</div>
+          <div class="parking-box">
+            🅿️ <strong>停泊點：</strong>後生掛溫泉前 專用免費停車場<a href="https://www.google.com/maps/search/?api=1&query=後生掛温泉+駐車場" target="_blank">導航</a>
+          </div>
+          <div class="item-detail">停妥車後下車散策約 30–40 分鐘，近距離感受滾燙冒泡的泥火山地質奇景。</div>
+        </div>
+        <div class="timeline-item" style="margin-top: 6px;">
+          <div class="item-header"><span class="item-time">14:15</span> 自駕北返十和田湖西岸（車程約 1 小時 30 分鐘）</div>
+        </div>
+        <div class="timeline-item" style="margin-top: 6px;">
+          <div class="item-header"><span class="item-time">15:45</span> 抵達 十和田飯店 辦理入住</div>
+          <div class="parking-box">
+            🅿️ <strong>停泊點：</strong>十和田飯店 (Towada Hotel) 專用免費停車場<a href="https://www.google.com/maps/search/?api=1&query=十和田ホテル+駐車場" target="_blank">導航</a>
+          </div>
         </div>
       </div>
 
       <div class="section-block">
-        <div class="section-title">🍜 晚餐</div>
+        <div class="section-title">🍜 晚餐 <span class="meal-included-tag">館內專案已包含</span></div>
         <div class="timeline-item">
           <div class="item-header"><span class="item-time">18:30</span> 十和田飯店 精緻會席料理</div>
-          <div class="recommend-dish">🍽️ 專案已包含一泊二食秋季頂級會席</div>
+          <div class="recommend-dish">🍽️ 專案已包含：秋田比內地雞、秋田牛與時令湖產精緻晚宴</div>
         </div>
       </div>
 
       <div class="section-block">
         <div class="section-title">🏨 返回住宿</div>
         <div class="hotel-box">
-          <strong>十和田飯店 (Towada Hotel)</strong><br>
+          <strong>十和田飯店 (Towada Hotel)</strong> <span class="meal-included-tag">一泊二食・含早晚餐</span><br>
           預約編號：6211608017 (1人 TWD 6,926，含早晚餐)<br>
           登録有形文化財木造名宿，沉浸於湖景露天風呂
         </div>
@@ -523,52 +655,74 @@
     <article id="day5" class="day-card">
       <div class="day-header">
         <span class="day-badge">Day 5｜11/05 (四)</span>
-        <h2 class="day-title">弘前城菊花祭 → 青森市區神社與港灣 → 東京</h2>
+        <h2 class="day-title">弘前古城菊花祭 → 廣田神社 → 還車 → Hayabusa 42號往東京</h2>
       </div>
 
       <div class="section-block">
-        <div class="section-title">☕ 早餐</div>
+        <div class="section-title">☕ 早餐 <span class="meal-included-tag">十和田飯店已包含</span></div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">08:00</span> 十和田飯店早餐 (專案內含)</div>
-          <div class="item-detail">08:45 退房出發，經國道 102 號開往弘前城 (約 1 小時 20 分)。</div>
+          <div class="item-header"><span class="item-time">07:30</span> 起床</div>
+          <div class="item-detail">08:00 十和田飯店景觀餐廳精緻早餐 (專案內含)，餐後辦理退房。</div>
         </div>
       </div>
 
       <div class="section-block">
-        <div class="section-title">🏛️ 景點行程（上午）</div>
+        <div class="section-title">🏛️ 景點行程（上午・弘前城巡禮）</div>
         <div class="timeline-item">
+          <div class="item-header"><span class="item-time">08:45</span> 退房出發開往弘前城（經國道 102 號，車程約 1 小時 20 分）</div>
+        </div>
+        <div class="timeline-item" style="margin-top: 6px;">
           <div class="item-header"><span class="item-time">10:05</span> 弘前公園・弘前城</div>
-          <div class="item-detail">參觀秋季古城、菊花祭展覽與護城河紅葉倒影；散步大正浪漫館。</div>
+          <div class="parking-box">
+            🅿️ <strong>停泊點：</strong>弘前市立觀光館地下停車場 或 弘前文化中心停車場（追手門旁，收費便利）<a href="https://www.google.com/maps/search/?api=1&query=弘前市立観光館+駐車場" target="_blank">導航</a>
+          </div>
+          <div class="item-detail">停妥車後步行進入古城，參觀天守閣護城河倒影與秋季菊花紅葉祭典。</div>
         </div>
       </div>
 
       <div class="section-block">
         <div class="section-title">🍜 午餐</div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">12:00</span> 弘前大正浪漫館或藤田記念庭園</div>
+          <div class="item-header"><span class="item-time">12:15</span> 弘前大正浪漫館 或 藤田記念庭園洋館</div>
+          <div class="item-detail">自公園追手門步行 3 分鐘即達，不需移車。</div>
           <div class="recommend-dish">🍽️ 推薦：弘前在地特產蘋果派與滴濾咖啡</div>
         </div>
       </div>
 
       <div class="section-block">
-        <div class="section-title">🏛️ 景點行程（下午・神社與市區巡禮）</div>
+        <div class="section-title">🏛️ 景點行程（下午・神社參拜、還車與新幹線）</div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">13:00</span> 自駕前往廣田神社（或還車後走訪善知鳥神社）</div>
-          <div class="item-detail">
-            <strong>選項 A（還車前自駕）：</strong>參拜 <a href="https://www.google.com/maps/dir/?api=1&origin=弘前城&destination=廣田神社+青森" target="_blank">廣田神社（導航）</a>，體驗知名的「釣蘋果神籤」與祈求津輕消災御守。<br>
-            <strong>選項 B（還車後步行）：</strong>還車後步行前往 <a href="https://www.google.com/maps/dir/?api=1&origin=青森車站&destination=善知鳥神社&travelmode=walking" target="_blank">善知鳥神社（導航）</a>，探訪青森市發祥地古剎與龍神池水景。
+          <div class="item-header"><span class="item-time">13:15</span> 弘前出發開往青森市區（車程約 55 分鐘）</div>
+        </div>
+        <div class="timeline-item" style="margin-top: 6px;">
+          <div class="item-header"><span class="item-time">14:10</span> 廣田神社 參拜</div>
+          <div class="parking-box">
+            🅿️ <strong>停泊點：</strong>廣田神社 境內專用免費停車場（鳥居旁設有停車格）<a href="https://www.google.com/maps/search/?api=1&query=廣田神社+青森+駐車場" target="_blank">導航</a>
           </div>
+          <div class="item-detail">體驗特製小釣竿「釣蘋果神籤」與祈求青森蘋果御守（停留約 25 分鐘）。</div>
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
-          <div class="item-header"><span class="item-time">14:00</span> 青森市區辦理還車手續</div>
+          <div class="item-header"><span class="item-time">14:35</span> 自駕前往租車站附近加油站加滿油（車程約 8 分鐘）</div>
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
-          <div class="item-header"><span class="item-time">14:30</span> A-FACTORY & 睡魔之家 WA RASSE</div>
-          <div class="item-detail">參觀震撼巨型睡魔燈籠，採買青森蘋果酒與特色伴手禮。</div>
+          <div class="item-header">
+            <span class="item-time">14:50</span> 抵達青森租車門市辦理還車 <span class="rental-tag">15:00 還車</span>
+          </div>
+          <div class="item-detail">完成還車手續，步行約 3–5 分鐘前往旁邊的青森港灣區。</div>
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
-          <div class="item-header"><span class="item-time">16:30</span> 搭乘東北新幹線前往東京 (車程約 3h20m)</div>
-          <div class="item-detail">20:15 抵達東京站，轉乘地鐵至芝公園／大門站。</div>
+          <div class="item-header"><span class="item-time">15:15</span> A-FACTORY ＆ 睡魔之家 WA RASSE</div>
+          <div class="item-detail">參觀震撼巨型睡魔燈籠，採買青森蘋果酒與特色伴手禮（步行約 1 小時 15 分）。</div>
+        </div>
+        <div class="timeline-item" style="margin-top: 6px;">
+          <div class="item-header">
+            <span class="item-time">16:30</span> 青森站 ➔ 新青森 ➔ 東京（Hayabusa 42 號）
+          </div>
+          <div class="flight-box">
+            <div><strong>接駁：</strong>16:30 青森站 ➔ 16:36 新青森站（JR 奧羽本線）</div>
+            <div><strong>新幹線：</strong>16:51 新青森 ➔ 20:08 東京站（東北新幹線 Hayabusa 42 號・全車指定席）</div>
+            <div><strong>市區接駁：</strong>20:20 東京站搭乘地鐵至芝公園／大門站（約 15 分鐘）</div>
+          </div>
         </div>
       </div>
 
@@ -600,19 +754,18 @@
         <div class="section-title">☕ 早餐</div>
         <div class="timeline-item">
           <div class="item-header"><span class="item-time">08:30</span> 飯店起床整裝</div>
-          <div class="item-detail">09:00 於飯店周邊咖啡廳（如 Komeda 或藍瓶）享用早餐。</div>
+          <div class="item-detail">09:00 於飯店周邊咖啡廳享用早餐。</div>
         </div>
       </div>
 
       <div class="section-block">
         <div class="section-title">🏛️ 景點行程（上午・Outlet 購物）</div>
         <div class="timeline-item">
-          <div class="item-header"><span class="item-time">09:30</span> 前往搭乘直達高速巴士</div>
-          <div class="item-detail">從濱松町/品川搭乘直達巴士前往木更津 Outlet（車程約 50 分）。</div>
+          <div class="item-header"><span class="item-time">09:30</span> 搭乘直達高速巴士前往木更津（約 50 分鐘）</div>
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
           <div class="item-header"><span class="item-time">10:30</span> 三井 OUTLET PARK 木更津</div>
-          <div class="item-detail">關東最大 Outlet，採購戶外機能品牌、服飾選物與運動裝備。</div>
+          <div class="item-detail">關東最大 Outlet，採購戶外機能品牌與服飾選物。</div>
         </div>
       </div>
 
@@ -628,7 +781,7 @@
         <div class="section-title">🏛️ 景點行程（下午至傍晚・古寺與魔幻夜景）</div>
         <div class="timeline-item">
           <div class="item-header"><span class="item-time">15:30</span> 搭巴士返抵市區，回飯店卸貨</div>
-          <div class="item-detail">將 Outlet 戰利品放回東京大飯店，輕裝出發。</div>
+          <div class="item-detail">將戰利品放回東京大飯店，輕裝出發。</div>
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
           <div class="item-header"><span class="item-time">16:00</span> 增上寺 ＆ 芝東照宮</div>
@@ -638,13 +791,12 @@
           </div>
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
-          <div class="item-header"><span class="item-time">16:40</span> 漫步前往麻布台之丘</div>
-          <div class="item-detail">穿過芝公園步行約 15 分鐘（或搭車 5 分鐘）前往。</div>
+          <div class="item-header"><span class="item-time">16:40</span> 漫步前往麻布台之丘（步行約 15 分鐘）</div>
         </div>
         <div class="timeline-item" style="margin-top: 6px;">
           <div class="item-header"><span class="item-time">17:00</span> 麻布台之丘（Azabudai Hills）黃昏至夜景</div>
           <div class="item-detail">
-            <strong>捕捉魔幻藍調時刻：</strong>在中央廣場（Central Green）仰望夜間點燈之東京鐵塔與頂級流線綠意建築同框畫面。
+            <strong>捕捉魔幻藍調時刻：</strong>在中央廣場仰望夜間點燈之東京鐵塔與頂級流線綠意建築同框畫面。
           </div>
         </div>
       </div>
